@@ -16,8 +16,7 @@ provisioner:
 platforms:
   - name: f42
     driver:
-      image:
-        - file: /var/lib/libvirt/images/Fedora-KDE.x86_64-42.qcow2
+      image: Fedora-KDE.x86_64-42.qcow2
       display: <%= ENV['KDISPLAY'] || 'none' %>
 
 lifecycle:
