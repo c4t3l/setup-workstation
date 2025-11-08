@@ -4,7 +4,7 @@
 roles/repos/tasks/main.yml
 """
 
-from docitlib import read_yaml
+from docitlib import read_file
 
 ROLEPATH = "roles/repos"
 LOC_REPO_FILE = f"{ROLEPATH}/files/workstation.repo"

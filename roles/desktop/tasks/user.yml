@@ -1,0 +1,34 @@
+# Create user task
+---
+
+- name: Create robby user account
+  ansible.builtin.user:
+    name: rcallicotte
+    comment: Robby Callicotte
+    create_home: true
+    groups:
+      - wheel
+    append: true
+    password: |
+      '$6$4Rdss32W.ID4DVp1$UfA3Khl7g8JlgIzYsE/pI6IWuLRPrZ6CYVqvD5sU7VsIga9VJG.ykYh5GawJ1mFakWVGvE3njlVXONSgJseDJ.'
+
+- name: Deploy konsolerc config
+  ansible.builtin.copy:
+    src: files/konsolerc
+    dest: /home/rcallicotte/.config/konsolerc
+    owner: rcallicotte
+    group: rcallicotte
+
+- name: Create konsole config dir
+  ansible.builtin.file:
+    path: /home/rcallicotte/.local/share/konsole/
+    owner: rcallicotte
+    group: rcallicotte
+    state: directory
+
+- name: Deploy konsole profile
+  ansible.builtin.copy:
+    src: files/green.profile
+    dest: /home/rcallicotte/.local/share/konsole/green.profile
+    owner: rcallicotte
+    group: rcallicotte

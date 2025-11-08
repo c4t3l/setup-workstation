@@ -1,0 +1,26 @@
+# Configue desktop theme etc
+---
+
+- name: Deploy global theme
+  community.general.kdeconfig:
+    path: /usr/share/kde-settings/kde-profile/default/xdg/kdeglobals
+    values:
+      - group: General
+        key: ColorScheme
+        value: BreezeDark
+      - group: KDE
+        key: LookAndFeelPackage
+        value: org.fedoraproject.fedora.desktop
+      - group: KDE
+        key: ColorScheme
+        value: BreezeDark
+
+- name: Create skeleton dir
+  ansible.builtin.file:
+    path: /etc/skel/.config
+    state: directory
+
+- name: Deploy skeleton file
+  ansible.builtin.copy:
+    src: /usr/share/kde-settings/kde-profile/default/xdg/kdeglobals
+    dest: /etc/skel/.config/kdeglobals

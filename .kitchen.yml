@@ -19,6 +19,11 @@ platforms:
       image: Fedora-KDE.x86_64-42.qcow2
       display: <%= ENV['KDISPLAY'] || 'none' %>
 
+  - name: f43
+    driver:
+      image: Fedora-KDE.x86_64-43.qcow2
+      display: <%= ENV['KDISPLAY'] || 'none' %>
+
 lifecycle:
   post_create:
     - remote: sudo dnf -y install ansible-collection-community-general

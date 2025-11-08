@@ -14,3 +14,11 @@ def read_yaml(file):
     return _data
 
 
+def read_file(file):
+    """Reads in a file
+    and outputs a string
+    """
+    with open(file, "r") as f:
+        _data = f.read()
+    return _data
+
