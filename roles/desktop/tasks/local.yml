@@ -21,3 +21,16 @@
     dest: "/home/{{ user['username'] }}/.local/share/konsole/green.profile"
     owner: "{{ user['username'] }}"
     group: "{{ user['username'] }}"
+
+- name: Download Oh My Zsh installer
+  ansible.builtin.get_url:
+    url: >
+      https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+    dest: /tmp/install_ohmyzsh.sh
+
+- name: Install Oh My Zsh
+  ansible.builtin.command:
+    cmd: sh /tmp/install_ohmyzsh.sh --unattended
+    creates: "/home/{{ user['username'] }}/.oh-my-zsh"
+  become: true
+  become_user: "{{ user['username'] }}"
