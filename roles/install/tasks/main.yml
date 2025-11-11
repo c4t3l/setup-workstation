@@ -21,7 +21,6 @@
       - rubygem-kitchen-qemu
       - rubygem-kitchen-salt
       - rubygem-test-kitchen
-      - s3cmd
       - stow
       - vimde
       - yamllint

@@ -2,12 +2,12 @@
 # Run tests for desktop role
 
 
-from docitlib import read_yaml
-
+from docitlib import get_secrets
 
 
 PLAYPATH = "roles/desktop"
-USER = read_yaml("vars/desktop.yml")['user']
+USER = get_secrets("vars/desktop.yml", ".ansible-password.txt")['user']
+
 
 def test_deploy_konsolerc_config__file_exists(host):
     """Verify file exists"""

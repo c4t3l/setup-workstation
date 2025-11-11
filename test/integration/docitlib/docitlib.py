@@ -3,6 +3,8 @@
 Simple library of helper functions for making cleaner tests
 """
 
+import subprocess
+import shlex
 import yaml
 
 def read_yaml(file):
@@ -22,3 +24,9 @@ def read_file(file):
         _data = f.read()
     return _data
 
+
+def get_secrets(file, secret_key):
+    """Returns info encrypted via ansible vault"""
+    cmd = f"ansible-vault view --vault-password-file {secret_key} {file}"
+    data = subprocess.run(shlex.split(cmd), capture_output=True)
+    return yaml.safe_load(data.stdout)
