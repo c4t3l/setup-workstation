@@ -1,0 +1,12 @@
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+export EDITOR="vim"
+
+ZSH_THEME="sonicradish"
+ZSH_CUSTOM=$HOME/.zsh_home
+
+plugins=(git 
+        jump
+        vi-mode)
+
+source $ZSH/oh-my-zsh.sh

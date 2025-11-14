@@ -17,7 +17,9 @@ def test_deploy_global_theme_general__file_contains(host):
 
 def test_deploy_global_theme_kde1__file_contains(host):
     """Verify file contains value"""
-    assert host.file(f"{KDEDEFAULTDIR}/kdeglobals").contains("org.fedoraproject.fedora.desktop")
+    assert host.file(
+            f"{KDEDEFAULTDIR}/kdeglobals").contains(
+                    "org.fedoraproject.fedora.desktop")
 
 
 def test_deploy_global_theme_kde2__file_contains(host):
