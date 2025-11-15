@@ -1,6 +1,7 @@
 ---
 - name: Deploy KDE Workstation
   hosts: desktop
+  connection: local
   gather_facts: true
   become: true
   vars_files:
