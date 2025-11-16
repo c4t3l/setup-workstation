@@ -1,5 +1,7 @@
 # Workstation
 
+[![Copr build status](https://copr.fedorainfracloud.org/coprs/rcallicotte/setup-workstation/package/setup-workstation/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/rcallicotte/setup-workstation/package/setup-workstation/)
+
 This is a playbook for setting up a KDE workstation.
 
 ## Using kitchen-ci
