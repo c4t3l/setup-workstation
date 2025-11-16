@@ -27,11 +27,11 @@ KDE-based workstation setup and initial configuration.
 %install
 install -Dpm 0644 -t %{buildroot}/opt/%{name} default.yml
 install -Dpm 0644 -t %{buildroot}/opt/%{name} hosts
-install -Dpm 0755 -t %{buildroot}/opt/%{name}/vars vars/*
+install -Dpm 0644 -t %{buildroot}/opt/%{name}/vars vars/*
 cp -prv roles %{buildroot}/opt/%{name}/.
 
-install -Dpm 0755 -t %{buildroot}/opt/%{name} %{name}.sh
-install -Dpm 0755 -t %{buildroot}/opt/%{name} %{name}.desktop
+install -Dpm 0755 -t %{buildroot}/opt/%{name}/dist dist/*
+%dnl install -Dpm 0755 -t %{buildroot}/opt/%{name} %{name}.desktop
 
 
 %check
