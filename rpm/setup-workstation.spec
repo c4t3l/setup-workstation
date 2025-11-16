@@ -1,6 +1,6 @@
 Name:           setup-workstation
 Version:        2025.11.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Ansible-based Workstation Setup
 
 License:        MIT
@@ -45,7 +45,8 @@ install -Dpm 0644 %{S:10} %{buildroot}%{_sysusersdir}/%{name}.conf
 
 %post
 # Create symlink for kroot one-click install
-ln -s /opt/%{name}.desktop /home/kroot/Desktop/.
+mkdir /home/kroot/Desktop
+ln -sf /opt/%{name}.desktop /home/kroot/Desktop/.
 
 
 %check
@@ -60,5 +61,8 @@ ansible-playbook -vvvv --syntax-check --inventory hosts default.yml
 
 
 %changelog
+* Sun Nov 16 2025 Robby Callicotte <rcallicotte@fedoraproject.org> - 2025.11.1-2
+- Update kroot uid
+
 * Sat Nov 15 2025 Robby Callicotte <rcallicotte@fedoraproject.org> - 2025.11.1
 - Initial build
