@@ -2,5 +2,6 @@
 *.swp
 *.pyc
 *.kitchen/
-rpm/
+rpm/results/*
+rpm/*.tar.gz
 
