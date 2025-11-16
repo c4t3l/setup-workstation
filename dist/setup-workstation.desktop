@@ -1,7 +1,7 @@
 [Desktop Entry]
 Comment[en_US]=
 Comment=
-Exec=/opt/setup-workstation.sh
+Exec=/opt/setup-workstation/dist/setup-workstation.sh
 GenericName[en_US]=
 GenericName=
 Icon=fedora-logo-icon
