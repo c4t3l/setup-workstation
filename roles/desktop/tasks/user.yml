@@ -11,3 +11,4 @@
       - mock
     append: true
     password: "{{ user['password'] | password_hash('sha512', 'salt') }}"
+    update_password: on_create

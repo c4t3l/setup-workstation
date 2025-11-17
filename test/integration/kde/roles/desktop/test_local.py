@@ -5,12 +5,12 @@ import os
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from docitlib import get_secrets
 from docitlib import read_file
+from docitlib import read_yaml
 
 
 PLAYPATH = "roles/desktop"
-USER = get_secrets("vars/desktop.yml", ".ansible-password.txt")['user']
+USER = read_yaml("vars/desktop.yml")['user']
 
 
 ##### Deploy konsolerc config #################################################
