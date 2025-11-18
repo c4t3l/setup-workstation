@@ -45,6 +45,6 @@ suites:
 verifier:
   name: shell
   command: >
-    py.test -vvvrxXs --color=yes
+    pytest -vvvrxXs --color=yes
     --hosts="paramiko://${KITCHEN_USERNAME}@${KITCHEN_HOSTNAME}:${KITCHEN_PORT}?ssh_identity_file=${KITCHEN_SSH_KEY}"
     --sudo test/integration/${KITCHEN_SUITE}

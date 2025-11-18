@@ -12,3 +12,30 @@
     append: true
     password: "{{ user['password'] | password_hash('sha512', 'salt') }}"
     update_password: on_create
+
+- name: Create productivity dirs
+  ansible.builtin.file:
+    path: "/home/{{ user['username'] }}/Documents/{{ item }}"
+    owner: "{{ user['username'] }}"
+    group: "{{ user['username'] }}"
+    state: directory
+  loop:
+    - devel
+    - formulas
+    - os_images
+    - personal
+    - playbooks
+    - presentations
+    - rpms
+
+- name: Create rpm dirs
+  ansible.builtin.file:
+    path: "/home/{{ user['username'] }}/Documents/rpms/{{ item }}"
+    owner: "{{ user['username'] }}"
+    group: "{{ user['username'] }}"
+    state: directory
+  loop:
+    - centos-scm
+    - copr
+    - fedora-review
+    - fedora-scm
